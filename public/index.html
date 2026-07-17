@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Unduh Video — Ambil video dan audio dari TikTok, Instagram, YouTube, Facebook</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Unduh Video</h1>
+    <p class="tagline">Tempel link dari TikTok, Instagram, YouTube, atau Facebook, lalu unduh sebagai video atau audio.</p>
+  </header>
+
+  <main id="main">
+    <form id="download-form" novalidate>
+
+      <div class="field">
+        <label for="video-url">Link video</label>
+        <input
+          type="url"
+          id="video-url"
+          name="video-url"
+          placeholder="Tempel link video di sini, misalnya https://www.tiktok.com/..."
+          required
+          aria-describedby="url-hint"
+        />
+        <p id="url-hint" class="hint">Dukungan link: TikTok, Instagram, YouTube, dan Facebook.</p>
+      </div>
+
+      <div class="field">
+        <label for="format-select">Format unduhan</label>
+        <select id="format-select" name="format" aria-describedby="format-hint">
+          <option value="mp4">Video (MP4)</option>
+          <option value="mp3">Audio saja (MP3)</option>
+        </select>
+        <p id="format-hint" class="hint">Pilih video kalau mau gambarnya, atau audio saja kalau cuma butuh suaranya.</p>
+      </div>
+
+      <div class="field" id="resolution-field">
+        <label for="resolution-select">Resolusi video</label>
+        <select id="resolution-select" name="resolution">
+          <option value="360">360p</option>
+          <option value="480">480p</option>
+          <option value="720" selected>720p (bawaan)</option>
+          <option value="1080">1080p</option>
+        </select>
+      </div>
+
+      <div class="field" id="bitrate-field" hidden>
+        <label for="bitrate-select">Kualitas audio</label>
+        <select id="bitrate-select" name="bitrate">
+          <option value="128">128 kbps</option>
+          <option value="192" selected>192 kbps</option>
+          <option value="256">256 kbps</option>
+          <option value="320">320 kbps</option>
+        </select>
+      </div>
+
+      <button type="submit" id="submit-button">Ambil dan unduh</button>
+    </form>
+
+    <!-- Status diumumkan otomatis ke pembaca layar tiap kali berubah -->
+    <div id="status" role="status" aria-live="polite" class="status"></div>
+
+    <section id="video-info" class="video-info" hidden aria-labelledby="video-info-heading">
+      <h2 id="video-info-heading">Video ditemukan</h2>
+      <p id="video-title"></p>
+      <p id="video-uploader"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Gunakan hanya untuk video yang kamu punya izin mengunduhnya, ya.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
