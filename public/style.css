@@ -1,0 +1,153 @@
+:root {
+  --bg: #12131a;
+  --surface: #1c1e29;
+  --text: #f2f1ec;
+  --text-muted: #b7b6c4;
+  --accent: #6ee7b7;
+  --accent-text: #05221a;
+  --border: #34364a;
+  --error: #ff8f8f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.site-header {
+  padding: 2.5rem 1.5rem 1.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.site-header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+
+.tagline {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+#download-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field:last-of-type {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+input[type="url"],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0.4rem 0 0;
+}
+
+button {
+  width: 100%;
+  margin-top: 1.75rem;
+  padding: 0.9rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Fokus jelas kelihatan buat navigasi keyboard */
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.status {
+  margin-top: 1.25rem;
+  padding: 0 0.25rem;
+  min-height: 1.5rem;
+  font-size: 1rem;
+}
+
+.status[data-state="error"] {
+  color: var(--error);
+}
+
+.status[data-state="success"] {
+  color: var(--accent);
+}
+
+.video-info {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.video-info h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.site-footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
